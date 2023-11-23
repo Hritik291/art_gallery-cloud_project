@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Florals</title>
+    <style>
+        .container {
+            /* border: 2px solid red; */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        .img {
+            max-height: 200px;
+            margin: 3px 0px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .img:hover {
+            opacity: .7;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            /* border: 2px solid red; */
+        }
+
+        .img-content {
+            margin: auto;
+            display: block;
+            max-width: 800px;
+            user-select: none;
+        }
+
+        #text {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: aquamarine;
+            padding: 10px 0;
+            height: 150px;
+        }
+
+        .img-content, #text {
+            animation-name: animate;
+            animation-duration: .6s;
+        }
+
+        @keyframes animate {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        .close:hover, .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        @media only screen and (max-width: 700px) {
+            .modal-content {
+                width: 100%
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <img src="https://images.pexels.com/photos/1477166/pexels-photo-1477166.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/1382393/pexels-photo-1382393.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/36753/flower-purple-lical-blosso.jpg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/67857/daisy-flower-spring-marguerite-67857.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/62277/pexels-photo-62277.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/1118793/pexels-photo-1118793.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/1858215/pexels-photo-1858215.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/1029037/pexels-photo-1029037.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/56905/pexels-photo-56905.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/2253831/pexels-photo-2253831.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/1050848/pexels-photo-1050848.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/15242/flower-roses-bloom-blossom.jpg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/2249647/pexels-photo-2249647.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/55828/crocus-flower-spring-buhen-55828.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/2736613/pexels-photo-2736613.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/2101187/pexels-photo-2101187.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/4041428/pexels-photo-4041428.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/53347/pelargonium-bloom-flower-floral-53347.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/66181/pexels-photo-66181.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/1038010/pexels-photo-1038010.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/59898/pexels-photo-59898.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+</div>
+<div id="imgBox" class="modal">
+    <span class="close">&times;</span>
+    <img src="" alt="" class="img-content" id="imgHover">
+    <div id="text"></div>
+</div>
+</body>
+<script>
+    let imgBox = document.getElementById("imgBox");
+    let img = document.getElementsByClassName("imp");
+    let imgHover = document.getElementById("imgHover");
+    let text = document.getElementById("text");
+    Array.from(img).forEach(function (element, index) {
+        element.onclick = function () {
+            imgBox.style.display = "block";
+            imgHover.src = this.src;
+            text.innerHTML = this.alt;
+        }
+    })
+    let span = document.querySelector(".close");
+    span.onclick = function () {
+        imgBox.style.display = "none";
+    }
+</script>
+</html>

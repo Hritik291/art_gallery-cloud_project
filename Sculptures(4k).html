@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sculptures</title>
+    <style>
+        .container {
+            /* border: 2px solid red; */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        .img {
+            max-height: 200px;
+            margin: 3px 0px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .img:hover {
+            opacity: .7;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            /* border: 2px solid red; */
+        }
+
+        .img-content {
+            margin: auto;
+            display: block;
+            max-width: 800px;
+            user-select: none;
+        }
+
+        #text {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: aquamarine;
+            padding: 10px 0;
+            height: 150px;
+        }
+
+        .img-content, #text {
+            animation-name: animate;
+            animation-duration: .6s;
+        }
+
+        @keyframes animate {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        .close:hover, .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        @media only screen and (max-width: 700px) {
+            .modal-content {
+                width: 100%
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <img src="https://images.pexels.com/photos/5289727/pexels-photo-5289727.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/36006/renaissance-schallaburg-figures-facade.jpg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/3683194/pexels-photo-3683194.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/672630/pexels-photo-672630.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/2723450/pexels-photo-2723450.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/1652405/pexels-photo-1652405.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/18826657/pexels-photo-18826657/free-photo-of-bronze-sculptures-of-children-at-the-base-of-the-lantern-in-paris.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/18733483/pexels-photo-18733483/free-photo-of-close-up-of-sculptures-of-jesus-christ-and-virgin-mary.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/18815727/pexels-photo-18815727/free-photo-of-sculptures-of-usa-presidents-at-mount-rushmore-national-memorial.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/2167395/pexels-photo-2167395.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/2340768/pexels-photo-2340768.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/11775858/pexels-photo-11775858.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/2570059/pexels-photo-2570059.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/2888225/pexels-photo-2888225.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/9998331/pexels-photo-9998331.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/2819082/pexels-photo-2819082.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/355188/pexels-photo-355188.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/3763907/pexels-photo-3763907.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/1480964/pexels-photo-1480964.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/543243/pexels-photo-543243.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/2944561/pexels-photo-2944561.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/97497/pexels-photo-97497.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/1003851/pexels-photo-1003851.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/5067076/pexels-photo-5067076.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/3780228/pexels-photo-3780228.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/161159/church-altar-altarpiece-glassart-161159.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/3118564/pexels-photo-3118564.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/3484001/pexels-photo-3484001.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/14302398/pexels-photo-14302398.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/8349186/pexels-photo-8349186.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/6342284/pexels-photo-6342284.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/7317597/pexels-photo-7317597.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/1179123/pexels-photo-1179123.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/1604827/pexels-photo-1604827.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/1570607/pexels-photo-1570607.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/945435/pexels-photo-945435.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/5531412/pexels-photo-5531412.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/3719149/pexels-photo-3719149.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/2547616/pexels-photo-2547616.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/840343/pexels-photo-840343.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/1058282/pexels-photo-1058282.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/3678975/pexels-photo-3678975.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/1478243/pexels-photo-1478243.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/8349133/pexels-photo-8349133.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/14599420/pexels-photo-14599420.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/10287305/pexels-photo-10287305.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/5999278/pexels-photo-5999278.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/18209328/pexels-photo-18209328/free-photo-of-sculptures-of-elephanta-caves-in-mumbai.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/1819437/pexels-photo-1819437.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/13815925/pexels-photo-13815925.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+    <img src="https://images.pexels.com/photos/14648910/pexels-photo-14648910.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="img imp">
+</div>
+<div id="imgBox" class="modal">
+    <span class="close">&times;</span>
+    <img src="" alt="" class="img-content" id="imgHover">
+    <div id="text"></div>
+</div>
+</body>
+<script>
+    let imgBox = document.getElementById("imgBox");
+    let img = document.getElementsByClassName("imp");
+    let imgHover = document.getElementById("imgHover");
+    let text = document.getElementById("text");
+    Array.from(img).forEach(function (element, index) {
+        element.onclick = function () {
+            imgBox.style.display = "block";
+            imgHover.src = this.src;
+            text.innerHTML = this.alt;
+        }
+    })
+    let span = document.querySelector(".close");
+    span.onclick = function () {
+        imgBox.style.display = "none";
+    }
+</script>
+</html>

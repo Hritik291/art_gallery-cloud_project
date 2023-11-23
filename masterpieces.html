@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MASTERPIECES</title>
+    <style>
+        .container {
+            /* border: 2px solid red; */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        .img {
+            max-height: 200px;
+            margin: 3px 0px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .img:hover {
+            opacity: .7;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            /* border: 2px solid red; */
+        }
+
+        .img-content {
+            margin: auto;
+            display: block;
+            max-width: 800px;
+            user-select: none;
+        }
+
+        #text {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: aquamarine;
+            padding: 10px 0;
+            height: 150px;
+        }
+
+        .img-content, #text {
+            animation-name: animate;
+            animation-duration: .6s;
+        }
+
+        @keyframes animate {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        .close:hover, .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        @media only screen and (max-width: 700px) {
+            .modal-content {
+                width: 100%
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <img src="https://www.brushwiz.com/assets/images/most-famous-paintings/top_100_paintings_mona_lisa_by_leonardo_da_vinci.jpg" alt="Mona Lisa" class="img imp">
+    <img src="https://www.brushwiz.com/assets/images/most-famous-paintings/top_100_paintings_the_starry_night_by_vincent_van_gogh.jpg" alt="The Starry Night" class="img imp">
+    <img src="https://www.brushwiz.com/assets/images/most-famous-paintings/top_100_paintings_the_scream_by_edvard_munch.jpg" alt="The Scream" class="img imp">
+    <img src="https://www.brushwiz.com/assets/images/most-famous-paintings/top_100_paintings_the_night_watch_by_rembrandt_m29.jpg" alt="The Night Watch" class="img imp">
+    <img src="https://www.brushwiz.com/assets/images/most-famous-paintings/top_100_paintings_the_kiss_by_gustav_klimt.jpg" alt="The Kiss" class="img imp">
+    <img src="https://www.brushwiz.com/assets/images/most-famous-paintings/top_100_paintings_the_arnolfini_portrait_by_jan_van_eyck_v44.jpg" alt="The Arnolfini Potrait" class="img imp">
+    <img src="https://www.brushwiz.com/assets/images/most-famous-paintings/top_100_paintings_the_birth_of_venus_by_sandro_botticelli_v46.jpg" alt="The Birth of Venus" class="img imp">
+    <img src="https://www.brushwiz.com/assets/images/most-famous-paintings/top_100_paintings_impression,_sunrise_by_claude_monet.jpg" alt="Impression Sun Rise" class="img imp">
+    <img src="https://www.brushwiz.com/assets/images/most-famous-paintings/top_100_paintings_las_meninas_by_diego_velazquez_l36.jpg" alt="Las Meninas" class="img imp">
+    <img src="https://www.brushwiz.com/assets/images/most-famous-paintings/top_100_paintings_the_creation_of_adam_by_michelangelo.jpg" alt="Creation of Adam" class="img imp">
+    <img src="https://www.brushwiz.com/assets/images/most-famous-paintings/top_100_paintings_the_grand_odalisque_by_jean_auguste_dominique_ingres_f91.jpg" alt="The Grand Odalisque" class="img imp">
+    <img src="https://www.brushwiz.com/assets/images/most-famous-paintings/top_100_paintings_the_happy_accidents_of_the_swing_by_jean-honore_fragonard_s7.jpg" alt="The Swing" class="img imp">
+    <img src="https://www.brushwiz.com/assets/images/most-famous-paintings/top_100_paintings_the_liberty_leading_the_people_by_eugene_delacroix.jpg" alt="The Liberty Leading The People" class="img imp">
+    <img src="https://www.brushwiz.com/assets/images/most-famous-paintings/top_100_paintings_american_gothic_by_grant_wood_c92.jpg" alt="American Gothik" class="img imp">
+    <img src="https://www.brushwiz.com/assets/images/most-famous-paintings/top_100_paintings_the_triumph_of_galatea_by_raphael_h76.jpg" alt="The Triumph of Galatea" class="img imp">
+    <img src="https://www.brushwiz.com/assets/images/most-famous-paintings/top_100_paintings_the_gleaners_by_jean-francois_millet.jpg" alt="The Gleaners" class="img imp">
+    <img src="https://www.brushwiz.com/assets/images/most-famous-paintings/top_100_paintings_olympia_by_edouard_manet.jpg" alt="Olympia" class="img imp">
+    <img src="https://www.brushwiz.com/assets/images/most-famous-paintings/top_100_paintings_the_tower_of_babel_by_pieter_bruegel_the_elder_w1.jpg" alt="The Tower of Babel" class="img imp">
+    <img src="https://www.brushwiz.com/assets/images/most-famous-paintings/top_100_paintings_the_ninth_wave_by_ivan_aivazovsky_m94.jpg" alt="The Ninth Wave" class="img imp">
+    <img src="https://www.brushwiz.com/assets/images/most-famous-paintings/top_100_paintings_the_sleepers_by_gustave_courbet.jpg" alt="The Sleepers" class="img imp">
+    <img src="https://www.brushwiz.com/assets/images/most-famous-paintings/top_100_paintings_the_fall_of_the_damned_by_peter_paul_rubens_k14.jpg" alt="The Fall of The Damned" class="img imp">
+    <img src="https://www.brushwiz.com/assets/images/most-famous-paintings/top_100_paintings_annunciation_by_leonardo_da_vinci.jpg" alt="Annuncation" class="img imp">
+    <img src="https://www.brushwiz.com/assets/images/most-famous-paintings/top_100_paintings_the_oath_of_horatii_by_jacques-louis_david_k39.jpg" alt="The Oath of Horatii" class="img imp">
+</div>
+<div id="imgBox" class="modal">
+    <span class="close">&times;</span>
+    <img src="" alt="" class="img-content" id="imgHover">
+    <div id="text"></div>
+</div>
+</body>
+<script>
+    let imgBox = document.getElementById("imgBox");
+    let img = document.getElementsByClassName("imp");
+    let imgHover = document.getElementById("imgHover");
+    let text = document.getElementById("text");
+    Array.from(img).forEach(function (element, index) {
+        element.onclick = function () {
+            imgBox.style.display = "block";
+            imgHover.src = this.src;
+            text.innerHTML = this.alt;
+        }
+    })
+    let span = document.querySelector(".close");
+    span.onclick = function () {
+        imgBox.style.display = "none";
+    }
+</script>
+</html>
