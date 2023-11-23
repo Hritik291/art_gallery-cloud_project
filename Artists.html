@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artists</title>
+    <style>
+        .container {
+            /* border: 2px solid red; */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        .img {
+            max-height: 200px;
+            margin: 3px 0px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .img:hover {
+            opacity: .7;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            /* border: 2px solid red; */
+        }
+
+        .img-content {
+            margin: auto;
+            display: block;
+            max-width: 800px;
+            user-select: none;
+        }
+
+        #text {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: aquamarine;
+            padding: 10px 0;
+            height: 150px;
+        }
+
+        .img-content, #text {
+            animation-name: animate;
+            animation-duration: .6s;
+        }
+
+        @keyframes animate {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        .close:hover, .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        @media only screen and (max-width: 700px) {
+            .modal-content {
+                width: 100%
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <img src="https://theartwolf.com/wp-content/uploads/2021/06/Pablo_Picasso_photo_bn.jpg" alt="PABLO PICASSO (1881-1973)" class="img imp">
+    <img src="https://theartwolf.com/wp-content/uploads/2021/06/Giotto_di_Bondone_portrait.jpg" alt="GIOTTO DI BONDONE (c.1267-1337)" class="img imp">
+    <img src="https://theartwolf.com/wp-content/uploads/2021/07/Leonardo_da_Vinci_-Self-portrait_small.jpg" alt="LEONARDO DA VINCI (1452-1519)" class="img imp">
+    <img src="https://theartwolf.com/wp-content/uploads/2021/06/Rembrandt_van_Rijn_-_Self-Portrait_-_1659.jpg" alt="REMBRANDT VAN RIJN (1606-1669)" class="img imp">
+    <img src="https://theartwolf.com/wp-content/uploads/2021/06/Claude_Monet_-_1899.jpg" alt="CLAUDE MONET (1840-1926)" class="img imp">
+    <img src="https://theartwolf.com/wp-content/uploads/2021/07/Ottavio_Leoni_-_Portrait_of_Caravaggio_small.jpg" alt="MICHELANGELO MERISI DA CARAVAGGIO (1571-1610)" class="img imp">
+    <img src="https://theartwolf.com/wp-content/uploads/2021/06/Jan_van_Eyck_-_Portrait_of_a_Man_in_a_Turban_-_1433.jpg" alt="JAN VAN EYCK (1390-1441)" class="img imp">
+    <img src="https://theartwolf.com/wp-content/uploads/2021/06/Francisco_de_Goya_por-Vicente_Lopez_Portana-_1826_-_94_x_78_cm_-_Prado_Museum_-_Madrid.jpg" alt="FRANCISCO DE GOYA (1746-1828)" class="img imp">
+    <img src="https://theartwolf.com/wp-content/uploads/2021/06/Henri_Matisse_-_1869-1954.jpg" alt="HENRI MATISSE (1869-1954)" class="img imp">
+    <img src="https://theartwolf.com/wp-content/uploads/2021/06/Sir_Peter_Paul_Rubens_-_Portrait_of_the_Artist_-_1577-1640.jpg" alt="SIR PETER PAUL RUBENS (1577-1640)" class="img imp">
+    <img src="https://theartwolf.com/wp-content/uploads/2021/06/Gustave_Courbet_-_Le_Desespere_-_1843.jpg" alt="GUSTAVE COURBET (1819-1877)" class="img imp">
+    <img src="https://theartwolf.com/wp-content/uploads/2021/06/William_Blake_-_1770-1845.jpg" alt="WILLIAM BLAKE (1757-1827)" class="img imp">
+    <img src="https://theartwolf.com/wp-content/uploads/2021/06/Winslow_Homer_-_1836-1910.jpg" alt="WINSLOW HOMER (1836-1910)" class="img imp">
+    <img src="https://theartwolf.com/wp-content/uploads/2021/06/Georges_Seurat_-_1888.jpg" alt="GEORGES SEURAT (1859-1891)" class="img imp">
+    <img src="https://theartwolf.com/wp-content/uploads/2021/06/Antoine_Watteau_-_1684-1721.jpg" alt="JEAN-ANTOINE WATTEAU (1684-1721)" class="img imp">
+    <img src="https://theartwolf.com/wp-content/uploads/2021/06/John_Constable_-_1800-1837.jpg" alt="JOHN CONSTABLE (1776-1837)" class="img imp">
+    <img src="https://theartwolf.com/wp-content/uploads/2021/06/Arshile_Gorky_-_1904-1948.jpg" alt="ARSHILLE GORKY (1905-1948)" class="img imp">
+    <img src="https://theartwolf.com/wp-content/uploads/2021/06/William_Hogarth_-_Self-Portrait_-_1697-1764.jpg" alt="WILLIAM HOGARTH (1697-1764)" class="img imp">
+    <img src="https://theartwolf.com/wp-content/uploads/2021/06/Georges_Braque_-_1908_-_1882-1963.jpg" alt="GEORGES BRAQUE (1882-1963)" class="img imp">
+    <img src="https://theartwolf.com/wp-content/uploads/2021/06/Georges_de_La_Tour_-_1593-1652.jpg" alt="GEORGES DE LA TOUR (1593-1652)" class="img imp">
+</div>
+<div id="imgBox" class="modal">
+    <span class="close">&times;</span>
+    <img src="" alt="" class="img-content" id="imgHover">
+    <div id="text"></div>
+</div>
+</body>
+<script>
+    let imgBox = document.getElementById("imgBox");
+    let img = document.getElementsByClassName("imp");
+    let imgHover = document.getElementById("imgHover");
+    let text = document.getElementById("text");
+    Array.from(img).forEach(function (element, index) {
+        element.onclick = function () {
+            imgBox.style.display = "block";
+            imgHover.src = this.src;
+            text.innerHTML = this.alt;
+        }
+    })
+    let span = document.querySelector(".close");
+    span.onclick = function () {
+        imgBox.style.display = "none";
+    }
+</script>
+</html>
